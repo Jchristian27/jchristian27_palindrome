@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "jchristian27_palindrome/version"
+require "Jchristian27_palindrome/version"
 
-class String
+module Jchristian27Palindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
@@ -13,6 +13,14 @@ class String
 
   # Returns content for palindrome testing.
   def processed_content
-    self.scan(/[a-z]/i).join.downcase
+    self.to_s.scan(/[a-z\d]/i).join.downcase
   end
+end
+
+class String
+  include Jchristian27Palindrome
+end
+
+class Integer
+  include Jchristian27Palindrome
 end

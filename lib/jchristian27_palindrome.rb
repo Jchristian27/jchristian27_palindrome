@@ -6,6 +6,8 @@ module Jchristian27Palindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
+    return false unless self.to_s.strip.length.positive?
+
     processed_content == processed_content.reverse
   end
 

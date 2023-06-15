@@ -27,4 +27,9 @@ class TestJchristian27Palindrome < Minitest::Test
   def test_integer_palindrome
     assert 12321.palindrome?
   end
+
+  def test_string_length
+    refute "".palindrome?
+    refute "   ".palindrome?
+  end
 end
